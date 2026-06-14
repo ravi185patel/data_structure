@@ -3,7 +3,7 @@ package template.segmenttree;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
-public class SegmentTree {
+public class SegmentTreeRangeMaxMin {
     public int seg[];
     public int lazy[];
     public int size;
@@ -11,7 +11,7 @@ public class SegmentTree {
     public BiFunction<Integer,Integer,Integer> ops;
     public Supplier<Integer> supplier;
 
-    public SegmentTree(int size,BiFunction<Integer,Integer,Integer> ops,Supplier<Integer> supplier){
+    public SegmentTreeRangeMaxMin(int size, BiFunction<Integer,Integer,Integer> ops, Supplier<Integer> supplier){
         seg=new int[4*size];
         lazy=new int[4*size];
         this.size = size;
@@ -46,9 +46,7 @@ public class SegmentTree {
         }
 
         int mid = l + (r-l)/2;
-        int left = query(2*i+1,l,mid,start,end);
-        int right = query(2*i+2,mid+1,r,start,end);
-        return ops.apply(left,right);
+        return ops.apply(query(2*i+1,l,mid,start,end), query(2*i+2,mid+1,r,start,end));
     }
 
     public void update(int index,int value){
@@ -74,7 +72,7 @@ public class SegmentTree {
     }
     public void updateRange(int start,int end,int i,int l,int r,int value){
         if(lazy[i] != 0){
-            seg[i]+=(r-l+1)*lazy[i];
+            seg[i]+=lazy[i];
             if(l!=r) {
                 lazy[2 * i + 1] += lazy[i];
                 lazy[2 * i + 2] += lazy[i];
@@ -87,15 +85,44 @@ public class SegmentTree {
             return;
         }
         if(start <= l && r <= end){
-            seg[i]+=(r-l+1)*value;
+            seg[i]+=value;
             if(l!=r){
                 lazy[2*i+1]+=value;
                 lazy[2*i+2]+=value;
             }
             return;
         }
-        if(l == r){
-            seg[i]=value;
+
+        int mid = l + (r-l)/2;
+        updateRange(start,end,2*i+1,l,mid,value);
+        updateRange(start,end,2*i+2,mid+1,end,value);
+        seg[i] = ops.apply(seg[2*i+1],seg[2*i+2]); // derive parent value based on child;
+    }
+
+    public void updateRangeMinOrMax(int start,int end,int value){
+        updateRangeMinOrMax(start,end,0,0,size-1,value);
+    }
+
+    public void updateRangeMinOrMax(int start,int end,int i,int l,int r,int value){
+        if(lazy[i] != 0){
+            seg[i]+=lazy[i];
+            if(l!=r) {
+                lazy[2 * i + 1] += lazy[i];
+                lazy[2 * i + 2] += lazy[i];
+            }
+            lazy[i]=0;
+
+            return ;
+        }
+        if( r < start && end < l){
+            return;
+        }
+        if(start <= l && r <= end){
+            seg[i]+=value;
+            if(l!=r){
+                lazy[2*i+1]+=value;
+                lazy[2*i+2]+=value;
+            }
             return;
         }
 

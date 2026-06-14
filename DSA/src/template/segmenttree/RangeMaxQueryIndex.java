@@ -1,7 +1,6 @@
-package practice.segmenttree;
+package template.segmenttree;
 
 import common.PrintUtil;
-import template.segmenttree.SegmentTree;
 
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
