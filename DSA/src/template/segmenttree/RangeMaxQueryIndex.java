@@ -21,6 +21,22 @@ public class RangeMaxQueryIndex extends SegmentTree{
         int mid = l + (r-l)/2;
         buildSegTree(nums,2*i+1,l,mid);
         buildSegTree(nums,2*i+2,mid+1,r);
+        /*
+         ---- sum ----
+         nums[left]+nums[right]; //value
+
+         ---- max value ----
+         max(nums[left],nums[right]);
+
+         ---- max value index----
+         left = seg[2*i+1]; store index; 2*i+1 represent left child;
+         right = seg[2*i +2]; store index: 2*i+2 represent right child;
+         if(nums[left] >= nums[right]){
+            return left;
+         }else{
+            return right;
+         }
+         */
         int leftMaxIndex = seg[2*i+1];
         int rightMaxIndex = seg[2*i+2];
         if(nums[leftMaxIndex] >= nums[rightMaxIndex]){
@@ -44,7 +60,11 @@ public class RangeMaxQueryIndex extends SegmentTree{
         int mid = l + (r-l)/2;
         int leftMax = query(2*i+1,l,mid,start,end);
         int rightMax = query(2*i+2,mid+1,r,start,end);  // same code ( find max value from bst or binary tree)
-        if(leftMax == -1 ) return rightMax;
+        if(leftMax == -1 ) return rightMax;  /*
+         VV IMP if there is no value on left side return right because we already reach to rightMax
+         //same for left it is like circle.
+
+         */
         else if(rightMax == -1) return leftMax;
         if(nums[leftMax] >= nums[rightMax]){
             return leftMax;
