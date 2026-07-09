@@ -16,5 +16,10 @@ public class PrintUtil {
         System.out.println(Arrays.toString(value));
     }
 
+    public static void print(int [][]matrix){
+        for(int row[]:matrix){
+            print(row);
+        }
+    }
 
 }
