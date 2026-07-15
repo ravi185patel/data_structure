@@ -3,7 +3,19 @@ package practice.graph.dsu.all;
 import java.util.*;
 
 class CountNumberOfCompleteComponents {
-    public int countCompleteComponents(int n, int[][] edges) {
+    public static void main(String[] args) {
+        System.out.println(countCompleteComponents1(5,new int[][]{
+                {0,1},
+                {0,2},
+                {1,2},
+                {2,3},
+                {3,4},
+                {4,2}
+        }));
+    }
+
+
+    public static int countCompleteComponents(int n, int[][] edges) {
         // Adjacency lists for each vertex
         List<Integer>[] graph = new ArrayList[n];
         // Map to store frequency of each unique adjacency list
@@ -37,6 +49,7 @@ class CountNumberOfCompleteComponents {
             List<Integer>,
             Integer
         > entry : componentFreq.entrySet()) {
+            System.out.println(entry.getKey().size()+" <> "+entry.getValue());
             if (entry.getKey().size() == entry.getValue()) {
                 completeCount++;
             }
@@ -44,7 +57,7 @@ class CountNumberOfCompleteComponents {
 
         return completeCount;
     }
-     public int countCompleteComponents1(int n, int[][] edges) {
+     public static int countCompleteComponents1(int n, int[][] edges) {
         // Adjacency lists for each vertex
         List<Integer>[] graph = new ArrayList[n];
 
@@ -71,6 +84,7 @@ class CountNumberOfCompleteComponents {
             dfs(vertex, graph, visited, componentInfo);
 
             // Check if component is complete - edges should be vertices * (vertices-1)
+            System.out.println(vertex+" <> "+componentInfo[0]+" <> "+componentInfo[1]);
             if (componentInfo[0] * (componentInfo[0] - 1) == componentInfo[1]) {
                 completeCount++;
             }
@@ -78,7 +92,7 @@ class CountNumberOfCompleteComponents {
         return completeCount;
     }
 
-    private void dfs(
+    private static void dfs(
         int curr,
         List<Integer>[] graph,
         Set<Integer> visited,
