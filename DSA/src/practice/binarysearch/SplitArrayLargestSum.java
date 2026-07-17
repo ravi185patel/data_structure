@@ -19,9 +19,9 @@ public class SplitArrayLargestSum {
             int mid = left + (right - left)/2;
             if(canSplit(nums,mid,k)){
               ans=mid;
-              left = mid + 1;
+                right=mid - 1;
             }else{
-              right=mid - 1;
+                left = mid + 1;
             }
         }
         return ans;
@@ -34,10 +34,65 @@ public class SplitArrayLargestSum {
             if(sum + nums[i] > mid){
                 sum=nums[i];
                 count++;
+                if(count>k){
+                    return false;
+                }
             }else{
                 sum+=nums[i];
             }
         }
-        return count > k;
+        return true;
+    }
+
+
+    public int splitArray1(int[] nums, int k) {
+        return findMinLargestSum(nums,k);
+    }
+
+    private int findMinLargestSum(int[]nums,int k){
+        int start=findMaxOfArray(nums),end=findSumOfArray(nums);
+        System.out.println(start+" >> " +end);
+        int ans=Integer.MIN_VALUE;
+        while(start <= end){
+            int mid = start + (end-start)/2;
+            int noOfSplit = finSplit(nums,mid);
+            if(noOfSplit > k){
+                start = mid + 1;
+            }else{
+                end = mid - 1;
+            }
+        }
+
+        return start;
+    }
+
+    private int findMaxOfArray(int [] nums){
+        int max = Integer.MIN_VALUE;
+        for(int i:nums){
+            max =  Math.max(max,i);
+        }
+
+        return max;
+    }
+
+    private int findSumOfArray(int nums[]){
+        int sum =0 ;
+        for(int i:nums){
+            sum+=i;
+        }
+        return sum;
+    }
+    private int finSplit(int[]nums,int maxSum){
+        int cnt=1,sum=0;
+        for(int i:nums){
+            if(sum + i > maxSum){
+                sum=i;
+                cnt++;
+            }else{
+                sum+=i;
+            }
+        }
+
+        return cnt;
     }
 }
