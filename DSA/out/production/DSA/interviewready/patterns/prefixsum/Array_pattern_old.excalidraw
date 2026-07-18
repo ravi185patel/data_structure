@@ -2305,11 +2305,11 @@
         "type": 3
       },
       "seed": 1293541655,
-      "version": 143,
-      "versionNonce": 1752446135,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1783519799908,
+      "version": 144,
+      "versionNonce": 231328160,
+      "isDeleted": true,
+      "boundElements": [],
+      "updated": 1784343180246,
       "link": null,
       "locked": false
     }

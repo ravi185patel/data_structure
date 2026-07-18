@@ -1921,7 +1921,7 @@
       "x": -394.6308099655871,
       "y": 4111.778010050455,
       "width": 1536.95947265625,
-      "height": 200,
+      "height": 375,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -1935,20 +1935,20 @@
       "index": "b0a",
       "roundness": null,
       "seed": 1581813235,
-      "version": 232,
-      "versionNonce": 940517017,
+      "version": 412,
+      "versionNonce": 204091488,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1783519612183,
+      "updated": 1784355407771,
       "link": null,
       "locked": false,
-      "text": "| Problem Type                              | Loop               | Mid Calculation | Left Update                      | Right Update                 | Return                |\n| ------------------------------------         | --------------      | ---------------    | ------------------------------      | ----------------------------     | ------------------      |\n| Exact Search                              | `start <= end`  | `(l+r)/2`       | `start = mid + 1`                | `end = mid - 1`                | Found index / `-1` |\n| Lower Bound                               | `start < end`  | `(l+r)/2`        | `start = mid + 1`                | `end = mid`                    | `start`            |\n| Upper Bound                               | `start < end`  | `(l+r)/2`        | `start = mid + 1`                | `end = mid`                    | `start`            |\n| First True (Binary Search on Answer) | `start < end`  | `(l+r)/2`        | `start = mid + 1` *(if false)* | `end = mid` *(if true)*       | `start`            |\n| Last True / Maximum Valid              | `start < end`    | `(l+r+1)/2`      | `start = mid` *(if true)*       | `end = mid - 1` *(if false)* | `start`            |\n",
+      "text": "| Problem Type                              | Loop               | Mid Calculation | Left Update                      | Right Update                 | Return                |\n| ------------------------------------         | --------------      | ---------------    | ------------------------------      | ----------------------------     | ------------------      |\n| Exact Search                              | `start <= end`  | `(l+r)/2`       | `start = mid + 1`                | `end = mid - 1`                | Found index / `-1` |\n| Lower Bound                               | `start < end`  | `(l+r)/2`        | `start = mid + 1`                | `end = mid`                    | `start`            |\n| Upper Bound                               | `start < end`  | `(l+r)/2`        | `start = mid + 1`                | `end = mid`                    | `start`            |\n| First True (Binary Search on Answer) | `start < end`  | `(l+r)/2`        | `start = mid + 1` *(if false)* | `end = mid` *(if true)*       | `start`            |\n| Last True / Maximum Valid              | `start < end`    | `(l+r+1)/2`      | `start = mid` *(if true)*       | `end = mid - 1` *(if false)* | `start`            |\n\nVIMP\nlow-->         <--high\nP P P P P NP NP NP\n           H  L\n\nWhen condition terminated where High always represent Ans. \n",
       "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "| Problem Type                              | Loop               | Mid Calculation | Left Update                      | Right Update                 | Return                |\n| ------------------------------------         | --------------      | ---------------    | ------------------------------      | ----------------------------     | ------------------      |\n| Exact Search                              | `start <= end`  | `(l+r)/2`       | `start = mid + 1`                | `end = mid - 1`                | Found index / `-1` |\n| Lower Bound                               | `start < end`  | `(l+r)/2`        | `start = mid + 1`                | `end = mid`                    | `start`            |\n| Upper Bound                               | `start < end`  | `(l+r)/2`        | `start = mid + 1`                | `end = mid`                    | `start`            |\n| First True (Binary Search on Answer) | `start < end`  | `(l+r)/2`        | `start = mid + 1` *(if false)* | `end = mid` *(if true)*       | `start`            |\n| Last True / Maximum Valid              | `start < end`    | `(l+r+1)/2`      | `start = mid` *(if true)*       | `end = mid - 1` *(if false)* | `start`            |\n",
+      "originalText": "| Problem Type                              | Loop               | Mid Calculation | Left Update                      | Right Update                 | Return                |\n| ------------------------------------         | --------------      | ---------------    | ------------------------------      | ----------------------------     | ------------------      |\n| Exact Search                              | `start <= end`  | `(l+r)/2`       | `start = mid + 1`                | `end = mid - 1`                | Found index / `-1` |\n| Lower Bound                               | `start < end`  | `(l+r)/2`        | `start = mid + 1`                | `end = mid`                    | `start`            |\n| Upper Bound                               | `start < end`  | `(l+r)/2`        | `start = mid + 1`                | `end = mid`                    | `start`            |\n| First True (Binary Search on Answer) | `start < end`  | `(l+r)/2`        | `start = mid + 1` *(if false)* | `end = mid` *(if true)*       | `start`            |\n| Last True / Maximum Valid              | `start < end`    | `(l+r+1)/2`      | `start = mid` *(if true)*       | `end = mid - 1` *(if false)* | `start`            |\n\nVIMP\nlow-->         <--high\nP P P P P NP NP NP\n           H  L\n\nWhen condition terminated where High always represent Ans. \n",
       "autoResize": true,
       "lineHeight": 1.25
     },
@@ -1958,7 +1958,7 @@
       "x": -429.21414329892036,
       "y": 4091.194676717122,
       "width": 1632.5,
-      "height": 220,
+      "height": 452.99999999999994,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -1974,8 +1974,8 @@
         "type": 3
       },
       "seed": 881941747,
-      "version": 137,
-      "versionNonce": 1892608887,
+      "version": 212,
+      "versionNonce": 808332384,
       "isDeleted": false,
       "boundElements": [
         {
@@ -1983,17 +1983,17 @@
           "type": "arrow"
         }
       ],
-      "updated": 1783519612183,
+      "updated": 1784355331029,
       "link": null,
       "locked": false
     },
     {
       "id": "0HHDLLVNWs8BwU7T6W8gh",
       "type": "arrow",
-      "x": 179.42868155281704,
-      "y": 4012.0280100504565,
-      "width": 1.3010764442202856,
-      "height": 73.1666666666656,
+      "x": 179.46510544809044,
+      "y": 4012.028010050456,
+      "width": 0.8569072768586636,
+      "height": 73.16666666666652,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -2007,11 +2007,11 @@
       "index": "b0c",
       "roundness": null,
       "seed": 1445645779,
-      "version": 263,
-      "versionNonce": 2021714809,
+      "version": 338,
+      "versionNonce": 1986633824,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1783519612183,
+      "updated": 1784355331029,
       "link": null,
       "locked": false,
       "points": [
@@ -2020,8 +2020,8 @@
           0
         ],
         [
-          -1.3010764442202856,
-          73.1666666666656
+          -0.8569072768586636,
+          73.16666666666652
         ]
       ],
       "startBinding": {
@@ -2305,11 +2305,11 @@
         "type": 3
       },
       "seed": 1293541655,
-      "version": 143,
-      "versionNonce": 1752446135,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1783519799908,
+      "version": 144,
+      "versionNonce": 231328160,
+      "isDeleted": true,
+      "boundElements": [],
+      "updated": 1784343180246,
       "link": null,
       "locked": false
     }

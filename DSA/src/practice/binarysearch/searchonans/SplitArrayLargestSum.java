@@ -1,4 +1,4 @@
-package practice.binarysearch;
+package practice.binarysearch.searchonans;
 
 
 import java.util.Arrays;
