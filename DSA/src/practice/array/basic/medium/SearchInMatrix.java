@@ -2,6 +2,7 @@ package practice.array.basic.medium;
 
 public class SearchInMatrix {
     public static void main(String[] args) {
+        System.out.println((0/2));
         System.out.println(findInMatrix(new int[][]{
                 {1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12}
         },8));
